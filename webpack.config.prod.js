@@ -9,7 +9,7 @@ const distName = 'dist.prod';
 
 module.exports = {
     entry: {
-        app: `${__dirname}/src/index.js`,
+        app: `${__dirname}/src/index.tsx`,
     },
     devtool: 'inline-source-map',
     output: {
@@ -23,10 +23,11 @@ module.exports = {
     ],
     module: {
         rules: [
-            { test: /\.jsx?$/, exclude: /node_modules/, loader: 'babel-loader' },
+            { test: /\.tsx?$/, loader: 'awesome-typescript-loader' },
+            { enforce: 'pre', test: /\.js$/, loader: 'source-map-loader' },
         ],
     },
     resolve: {
-        extensions: ['.js', '.jsx', '.json'],
+        extensions: ['.ts', '.tsx', '.js', '.json'],
     },
 };
