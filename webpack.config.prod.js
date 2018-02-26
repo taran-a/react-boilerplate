@@ -1,6 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 /*
     Configuration variables
  */
@@ -20,6 +20,9 @@ module.exports = {
         new HtmlWebpackPlugin({
             title: appTitle,
         }),
+        new UglifyJsPlugin({
+            parallel: true
+        })
     ],
     module: {
         rules: [

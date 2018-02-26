@@ -33,6 +33,7 @@
     "tslint": "^5.9.1",
     "tslint-config-airbnb": "^5.7.0",
     "typescript": "^2.7.2",
+    "uglifyjs-webpack-plugin": "^1.2.2",
     "webpack": "^3.11.0"
   }
 }
