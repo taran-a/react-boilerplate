@@ -9,7 +9,7 @@ const distName = 'dist.dev';
 
 module.exports = {
     entry: {
-        app: path.join(__dirname, 'src', 'index.tsx'),
+        app: path.join(__dirname, 'src', 'index.jsx'),
     },
     devtool: 'inline-source-map',
     devServer: {
@@ -31,11 +31,10 @@ module.exports = {
     ],
     module: {
         rules: [
-            { test: /\.tsx?$/, loader: 'awesome-typescript-loader' },
-            { enforce: 'pre', test: /\.js$/, loader: 'source-map-loader' },
+            { test: /\.jsx?$/, exclude: /node_modules/, loader: 'babel-loader' }
         ],
     },
     resolve: {
-        extensions: ['.ts', '.tsx', '.js', '.json'],
-    },
+        extensions: ['.js', '.jsx', '.json'],
+    }
 };

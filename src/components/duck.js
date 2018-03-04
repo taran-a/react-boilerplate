@@ -1,11 +1,11 @@
 import { handleActions } from 'redux-actions';
 
-const initialState: any = {};
+const initialState = {};
 
 /*
     Actions
  */
-const MAIN: string = 'MAIN';
+const MAIN = 'MAIN';
 
 const reducer = handleActions({
     [MAIN]: (state, action) => {
