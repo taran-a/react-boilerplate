@@ -6,7 +6,17 @@
     "jsRules": {},
     "rules": {
         "import-name": false,
-        "variable-name": false
+        "variable-name": false,
+        "align": false,
+        "ter-indent": [
+            true,
+            4,
+            {
+                "FunctionExpression": {
+                    "body": 6
+                }
+            }
+        ]
     },
     "rulesDirectory": []
 }

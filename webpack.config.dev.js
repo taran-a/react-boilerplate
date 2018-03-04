@@ -9,9 +9,16 @@ const distName = 'dist.dev';
 
 module.exports = {
     entry: {
-        app: `${__dirname}/src/index.tsx`,
+        app: path.join(__dirname, 'src', 'index.tsx'),
     },
     devtool: 'inline-source-map',
+    devServer: {
+        historyApiFallback: true,
+        contentBase: path.join(__dirname, distName),
+        port: 9000,
+        compress: true,
+        open: true
+    },
     output: {
         path: path.resolve(__dirname, distName),
         filename: '[name].bundle.js',
